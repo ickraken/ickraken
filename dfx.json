@@ -1,0 +1,36 @@
+{
+  "canisters": {
+    "ickraken_backend": {
+      "candid": "src/ickraken_backend/ickraken_backend.did",
+      "package": "ickraken_backend",
+      "type": "rust"
+    },
+    "ickraken_frontend": {
+      "dependencies": [
+        "ickraken_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/ickraken_frontend/src/index.html"
+      },
+      "source": [
+        "src/ickraken_frontend/assets",
+        "dist/ickraken_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
